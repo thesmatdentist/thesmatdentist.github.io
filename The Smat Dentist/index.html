@@ -339,8 +339,10 @@ footer a:hover{color:white}
     <div class="section-tag" data-en="Get in touch" data-es="Contáctame">Get in touch</div>
     <h2 data-en="Send me a message" data-es="Envíame un mensaje">Send me a message</h2>
     <p class="section-sub" data-en="Have a question, collaboration idea, or just want to say hello?" data-es="¿Tienes una pregunta, idea de colaboración o simplemente quieres saludar?">Have a question, collaboration idea, or just want to say hello?</p>
-    <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleContact(event)">
-      <input type="hidden" name="form-name" value="contact">
+    <form class="contact-form" action="https://formsubmit.co/thesmatdentist@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New message from The Smat Dentist website!">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://thesmatdentist.netlify.app/#contact">
       <div>
         <label data-en="Your name" data-es="Tu nombre">Your name</label>
         <input type="text" name="name" placeholder="Dr. Maria Garcia" required>
@@ -364,9 +366,7 @@ footer a:hover{color:white}
       </div>
       <button type="submit" class="btn-primary" style="align-self:flex-start" data-en="Send message →" data-es="Enviar mensaje →">Send message →</button>
     </form>
-    <div id="contact-success" style="display:none;margin-top:20px;background:#e8f5ee;color:#1a6b3a;padding:14px 24px;border-radius:10px;font-size:15px;font-weight:500;">
-      ✅ <span data-en="Message sent! I'll get back to you soon." data-es="¡Mensaje enviado! Te responderé pronto.">Message sent! I'll get back to you soon.</span>
-    </div>
+  
   </div>
 </section>
 
@@ -437,20 +437,7 @@ function handleSignup(e) {
     });
 }
 
-function handleContact(e) {
-  e.preventDefault();
-  var form = e.target;
-  var data = new FormData(form);
-  fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString() })
-    .then(function() {
-      document.getElementById('contact-success').style.display = 'block';
-      form.reset();
-    })
-    .catch(function() {
-      document.getElementById('contact-success').style.display = 'block';
-      form.reset();
-    });
-}
+
 
 function setLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
