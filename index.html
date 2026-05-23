@@ -246,6 +246,19 @@ footer a:hover{color:white}
   .booking-card{padding:36px 24px}
   nav{height:80px}
 }
+
+.community-float{position:fixed;right:20px;bottom:20px;z-index:9999;background:#0b1f4d;color:#fff;padding:14px 18px;border-radius:999px;text-decoration:none;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.community-section{padding:70px 5%;background:#f8fafc}
+.community-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.community-card{background:white;border:1px solid #e5e7eb;border-radius:20px;padding:28px}
+.community-card h3{margin-bottom:10px}
+.community-card ul{padding-left:18px;color:#64748b;line-height:1.8}
+.community-badge{display:inline-block;background:#fef3c7;padding:6px 12px;border-radius:999px;font-size:12px;margin-bottom:12px}
+.community-modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:10000}
+.community-modal.show{display:flex}
+.community-modal-box{background:white;padding:32px;border-radius:20px;max-width:520px;margin:20px;text-align:center}
+@media(max-width:768px){.community-grid{grid-template-columns:1fr}.community-float{left:20px;right:20px;text-align:center}}
+
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YKGB0BKYHZ"></script>
@@ -271,7 +284,7 @@ footer a:hover{color:white}
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('es')">ES</button>
     </div>
-  </div>
+  <a href="#community" class="nav-cta">Community</a></div>
 </nav>
 
 
@@ -282,6 +295,10 @@ footer a:hover{color:white}
     <h1 data-en="Your <em>smart</em> guide to the U.S. dental pathway" data-es="Tu guía <em>inteligente</em> para el camino dental en EE.UU.">Your <em>smart</em> guide to the U.S. dental pathway</h1>
     <p class="hero-sub" data-en="INBDE prep, residency applications, licensing tips, and the real talk nobody else shares — from someone who's been through it." data-es="Preparación para el INBDE, solicitudes de residencia, consejos de licenciatura y la verdad que nadie más comparte — de alguien que lo vivió.">INBDE prep, residency applications, licensing tips, and the real talk nobody else shares — from someone who's been through it.</p>
     <div class="hero-actions">
+<a href="https://discord.gg/Kber5fArs" class="btn-outline" target="_blank">Join Free Discord</a>
+<a href="https://www.launchpass.com/the-smat-dentist-community/smatdentist" class="btn-primary" target="_blank">$9.99 Community</a>
+<a href="https://www.launchpass.com/the-smat-dentist-community/smatdentistvip" class="btn-outline" target="_blank">VIP $49.99</a>
+
       <a href="#newsletter" class="btn-primary" data-en="Join the newsletter →" data-es="Únete al boletín →">Join the newsletter →</a>
       <a href="#blog" class="btn-outline" data-en="Read the blog" data-es="Leer el blog">Read the blog</a>
     </div>
@@ -507,6 +524,25 @@ footer a:hover{color:white}
     <a href="https://instagram.com/thesmatdentist" target="_blank">Instagram</a>
   </div>
   <p>© 2026 The Smat Dentist · <span data-en="Helping international dentists navigate the U.S." data-es="Ayudando a dentistas internacionales a navegar EE.UU.">Helping international dentists navigate the U.S.</span> 🦷</p>
+
+<section id="community" class="community-section">
+<div style="text-align:center;max-width:700px;margin:0 auto 40px">
+<div class="community-badge">FOUNDING MEMBERS WELCOME</div>
+<h2>Choose Your Community Path</h2>
+<p>Join the Smat Dentist community built for foreign-trained dentists navigating the U.S. pathway.</p>
+</div>
+<div class="community-grid">
+<div class="community-card"><h3>Free Discord</h3><ul><li>Ask questions</li><li>Meet other dentists</li><li>Community support</li><li>Motivation + updates</li></ul><a class="btn-primary" href="https://discord.gg/Kber5fArs" target="_blank">Join Free</a></div>
+<div class="community-card"><h3>$9.99 Community</h3><ul><li>Private channels</li><li>Exclusive guidance</li><li>Resources + strategy</li><li>Focused mentorship community</li></ul><a class="btn-primary" href="https://www.launchpass.com/the-smat-dentist-community/smatdentist" target="_blank">Join Standard</a></div>
+<div class="community-card"><h3>VIP $49.99</h3><ul><li>Priority access</li><li>More direct support</li><li>Premium mentorship</li><li>Fast-track community help</li></ul><a class="btn-primary" href="https://www.launchpass.com/the-smat-dentist-community/smatdentistvip" target="_blank">Join VIP</a></div>
+</div>
+</section>
+<a class="community-float" href="https://discord.gg/Kber5fArs" target="_blank">💬 Join Community</a>
+<div id="exitModal" class="community-modal"><div class="community-modal-box"><h3>Don’t navigate the U.S. dental pathway alone</h3><p>Join the Smat Dentist community for support, strategy, and mentorship.</p><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><a class="btn-outline" href="https://discord.gg/Kber5fArs" target="_blank">Free</a><a class="btn-primary" href="https://www.launchpass.com/the-smat-dentist-community/smatdentist" target="_blank">$9.99</a><a class="btn-outline" href="https://www.launchpass.com/the-smat-dentist-community/smatdentistvip" target="_blank">VIP</a></div></div></div>
+<script>
+document.addEventListener('mouseout',function(e){if(!e.relatedTarget && e.clientY<=0){document.getElementById('exitModal').classList.add('show');}});
+document.getElementById('exitModal').addEventListener('click',function(e){if(e.target.id==='exitModal') this.classList.remove('show');});
+</script>
 </footer>
 
 <script>
