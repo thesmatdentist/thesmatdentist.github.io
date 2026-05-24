@@ -94,27 +94,28 @@ a.topic-card p{font-size:13px;color:var(--text-muted);line-height:1.6}
 
 /* COMMUNITY SECTION */
 .community-section{padding:80px 5%;background:#f8fafc}
-.community-section .community-inner{max-width:1060px;margin:0 auto}
+.community-section .community-inner{max-width:1200px;margin:0 auto}
 .community-header{text-align:center;margin-bottom:48px}
 .community-badge{display:inline-block;background:#fef3c7;color:#92400e;padding:6px 16px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
-.community-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.community-card{background:white;border:1.5px solid var(--border);border-radius:20px;padding:32px 28px;transition:transform .2s,border-color .2s;display:flex;flex-direction:column}
+.community-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.community-card{background:white;border:1.5px solid var(--border);border-radius:20px;padding:28px 24px;transition:transform .2s,border-color .2s;display:flex;flex-direction:column}
 .community-card:hover{transform:translateY(-4px);border-color:var(--gold)}
 .community-card.featured{border-color:var(--gold);background:var(--navy);color:white}
 .community-card.featured h3{color:white}
 .community-card.featured .card-price{color:var(--gold)}
 .community-card.featured .card-price-sub{color:rgba(255,255,255,.6)}
-.community-card h3{font-family:var(--font-display);font-size:22px;color:var(--navy);margin-bottom:8px}
-.card-price{font-size:32px;font-weight:700;color:var(--gold);margin-bottom:4px;font-family:var(--font-body)}
-.card-price-sub{font-size:13px;color:var(--text-muted);margin-bottom:20px}
-.community-card ul{list-style:none;padding:0;margin-bottom:28px;flex:1}
-.community-card ul li{font-size:14px;color:var(--text-muted);padding:7px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
 .community-card.featured ul li{color:rgba(255,255,255,.8);border-bottom-color:rgba(255,255,255,.1)}
-.community-card ul li::before{content:"✓";color:var(--gold);font-weight:700;flex-shrink:0;font-size:13px}
+.community-card h3{font-family:var(--font-display);font-size:20px;color:var(--navy);margin-bottom:8px}
+.card-price{font-size:28px;font-weight:700;color:var(--gold);margin-bottom:4px;font-family:var(--font-body)}
+.card-price-sub{font-size:12px;color:var(--text-muted);margin-bottom:16px}
+.community-card ul{list-style:none;padding:0;margin-bottom:24px;flex:1}
+.community-card ul li{font-size:13px;color:var(--text-muted);padding:6px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.4}
+.community-card ul li::before{content:"✓";color:var(--gold);font-weight:700;flex-shrink:0;font-size:13px;margin-top:1px}
 .tier-badge{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:20px;display:inline-block;margin-bottom:14px}
 .tier-badge.free{background:var(--blue-light);color:var(--blue)}
 .tier-badge.popular{background:var(--gold);color:white}
-.tier-badge.vip{background:var(--gold-light);color:#8b6914}
+.tier-badge.vip-lite{background:#f0e6ff;color:#5b21b6}
+.tier-badge.vip-full{background:var(--gold-light);color:#8b6914}
 
 /* EMAIL */
 .email-section{background:var(--cream);padding:80px 5%;display:flex;flex-direction:column;align-items:center;text-align:center}
@@ -183,7 +184,7 @@ a.topic-card p{font-size:13px;color:var(--text-muted);line-height:1.6}
 /* EXIT MODAL */
 .community-modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:10000}
 .community-modal.show{display:flex}
-.community-modal-box{background:white;padding:40px;border-radius:20px;max-width:540px;margin:20px;text-align:center}
+.community-modal-box{background:white;padding:40px;border-radius:20px;max-width:580px;margin:20px;text-align:center}
 .community-modal-box h3{font-family:var(--font-display);font-size:26px;color:var(--navy);margin-bottom:12px}
 .community-modal-box p{color:var(--text-muted);margin-bottom:24px}
 .modal-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
@@ -200,6 +201,9 @@ footer a:hover{color:white}
 .hero-visual{animation:fadeUp .7s .2s ease both}
 
 /* RESPONSIVE */
+@media(max-width:1024px){
+  .community-grid{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:768px){
   .hero{grid-template-columns:1fr;padding:40px 5%;text-align:center;gap:40px}
   .hero-actions{justify-content:center}
@@ -353,7 +357,7 @@ footer a:hover{color:white}
           <li>Motivation &amp; updates</li>
           <li>General pathway guidance</li>
         </ul>
-        <a href="https://discord.gg/Kber5fArs" target="_blank" class="btn-outline" style="display:block;text-align:center;padding:14px 20px">Join Free Discord →</a>
+        <a href="https://discord.gg/Kber5fArs" target="_blank" class="btn-outline" style="display:block;text-align:center;padding:12px 16px;font-size:14px">Join Free Discord →</a>
       </div>
 
       <!-- $9.99 STANDARD — FEATURED -->
@@ -363,31 +367,53 @@ footer a:hover{color:white}
         <div class="card-price">$9.99</div>
         <div class="card-price-sub">per month · Cancel anytime</div>
         <ul>
-          <li>Private exclusive channels</li>
-          <li>INBDE study resources</li>
-          <li>Application strategy tips</li>
-          <li>Residency guidance</li>
-          <li>Focused mentorship group</li>
-          <li>Monthly live Q&amp;A sessions</li>
+          <li>All premium Discord channels</li>
+          <li>INBDE study guidance</li>
+          <li>Advanced standing support</li>
+          <li>Residency pathway discussions</li>
+          <li>ECE/WES credentialing help</li>
+          <li>Interview prep resources</li>
+          <li>Templates &amp; scholarship info</li>
+          <li>Weekly live Q&amp;A sessions</li>
         </ul>
-        <a href="https://www.launchpass.com/the-smat-dentist-community/smatdentist" target="_blank" class="btn-gold" style="display:block;text-align:center">Join Standard →</a>
+        <a href="https://www.launchpass.com/the-smat-dentist-community/smatdentist" target="_blank" class="btn-gold" style="display:block;text-align:center;font-size:14px;padding:12px 16px">Join Standard →</a>
       </div>
 
-      <!-- $49.99 VIP -->
+      <!-- $49.99 VIP LITE -->
       <div class="community-card">
-        <span class="tier-badge vip">👑 VIP Access</span>
-        <h3>VIP Community</h3>
+        <span class="tier-badge vip-lite">👑 VIP Lite</span>
+        <h3>VIP Lite Mentorship</h3>
         <div class="card-price">$49.99</div>
         <div class="card-price-sub">per month · Cancel anytime</div>
         <ul>
           <li>Everything in Standard</li>
-          <li>Priority direct support</li>
-          <li>Personal statement reviews</li>
-          <li>1-on-1 strategy sessions</li>
-          <li>VIP-only private channels</li>
-          <li>Fast-track mentorship</li>
+          <li>2 private mentorship sessions/mo</li>
+          <li>Priority application support</li>
+          <li>VIP Discord access</li>
+          <li>1 major OR 2 minor reviews/mo</li>
+          <li>Interview preparation guidance</li>
+          <li>Personalized feedback</li>
         </ul>
-        <a href="https://www.launchpass.com/the-smat-dentist-community/smatdentistvip" target="_blank" class="btn-gold" style="display:block;text-align:center">Join VIP →</a>
+        <a href="https://www.launchpass.com/the-smat-dentist-community/thesmatdentistviplite" target="_blank" class="btn-gold" style="display:block;text-align:center;font-size:14px;padding:12px 16px">Join VIP Lite →</a>
+      </div>
+
+      <!-- $79.99 FULL VIP -->
+      <div class="community-card">
+        <span class="tier-badge vip-full">🏆 Full VIP</span>
+        <h3>VIP Mentorship</h3>
+        <div class="card-price">$79.99</div>
+        <div class="card-price-sub">per month · Limited spots</div>
+        <ul>
+          <li>Everything in VIP Lite</li>
+          <li>2 private 1:1 sessions/mo</li>
+          <li>Priority responses &amp; strategy</li>
+          <li>Full application &amp; doc review</li>
+          <li>Personal statement, CV, CAAPID/PASS</li>
+          <li>ECE/WES credentialing guidance</li>
+          <li>School strategy &amp; planning</li>
+          <li>Founder pricing — limited spots</li>
+        </ul>
+        <a href="https://www.launchpass.com/the-smat-dentist-community/smatdentistvip" target="_blank" class="btn-primary" style="display:block;text-align:center;font-size:14px;padding:12px 16px">Join VIP →</a>
       </div>
 
     </div>
@@ -551,15 +577,16 @@ footer a:hover{color:white}
 <!-- FLOATING COMMUNITY BUTTON -->
 <a class="community-float" href="#community">💬 Join Community</a>
 
-<!-- EXIT INTENT MODAL -->
+<!-- EXIT INTENT MODAL — updated with all 4 tiers -->
 <div id="exitModal" class="community-modal">
   <div class="community-modal-box">
     <h3>Don't navigate the U.S. dental pathway alone 🦷</h3>
     <p>Join the Smat Dentist community for support, strategy, and mentorship from someone who's been through it.</p>
     <div class="modal-btns">
-      <a href="https://discord.gg/Kber5fArs" target="_blank" class="btn-outline">Free Discord</a>
-      <a href="https://www.launchpass.com/the-smat-dentist-community/smatdentist" target="_blank" class="btn-gold" style="width:auto;padding:14px 20px">$9.99 / mo</a>
-      <a href="https://www.launchpass.com/the-smat-dentist-community/smatdentistvip" target="_blank" class="btn-primary">VIP $49.99</a>
+      <a href="https://discord.gg/Kber5fArs" target="_blank" class="btn-outline" style="padding:12px 16px;font-size:14px">Free Discord</a>
+      <a href="https://www.launchpass.com/the-smat-dentist-community/smatdentist" target="_blank" class="btn-gold" style="width:auto;padding:12px 16px;font-size:14px">$9.99/mo</a>
+      <a href="https://www.launchpass.com/the-smat-dentist-community/thesmatdentistviplite" target="_blank" class="btn-primary" style="padding:12px 16px;font-size:14px">VIP Lite $49.99</a>
+      <a href="https://www.launchpass.com/the-smat-dentist-community/smatdentistvip" target="_blank" class="btn-primary" style="padding:12px 16px;font-size:14px;background:var(--gold)">VIP $79.99</a>
     </div>
     <p style="margin-top:16px;font-size:12px;color:var(--text-muted);cursor:pointer" onclick="document.getElementById('exitModal').classList.remove('show')">No thanks, I'll go it alone</p>
   </div>
