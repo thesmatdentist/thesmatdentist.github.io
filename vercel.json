@@ -1,7 +1,0 @@
-{
-  "buildCommand": "cd client && vite build",
-  "outputDirectory": "dist/public",
-  "env": {
-    "NODE_ENV": "production"
-  }
-}
